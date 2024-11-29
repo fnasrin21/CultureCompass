@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultural Compass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Ribeye&family=Spicy+Rice&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Title Screen -->
+  <div id="title-screen" class="title-box">
+    <h1>Cultural Compass</h1>
+    <div class="welcome-box">
+      <h2>Welcome to Cultural Compass<br>Test Your Knowledge of the World!</h2>
+    </div>
+    <div class="difficulty-box">
+      <h3>Choose Your Difficulty</h3>
+      <button onclick="startQuiz('easy')">Easy</button>
+      <button onclick="startQuiz('medium')">Medium</button>
+      <button onclick="startQuiz('hard')">Hard</button>
+    </div>
+  </div>
+
+  <!-- Quiz Container -->
+  <div id="quiz-container" class="quiz-container hidden">
+    <div class="timer-box">
+      <p>Time Left:</p>
+      <p id="timer">60 seconds</p>
+    </div>
+    <div class="question-box">
+      <p id="progress-label">0% Completed</p>
+      <progress id="progress-bar" value="0" max="10"></progress>
+      <h2 id="question-text"></h2>
+      <ul id="question-choices"></ul>
+      <button onclick="skipQuestion()">Skip</button>
+      <button onclick="showHint()">Hint</button>
+      <p id="hint-text" class="hidden"></p>
+    </div>
+    <div class="score-box">
+      <p>Points Earned:</p>
+      <p id="score">0</p>
+    </div>
+  </div>
+
+  <!-- Time's Up Screen -->
+  <div id="timeout-screen" class="timeout-screen hidden">
+    <h2>Time's Up!</h2>
+    <p>You Scored: <span id="timeout-score"></span>/10. Great Job!</p>
+    <button onclick="restartQuiz()">Try Again</button>
+  </div>
+
+  <!-- End Screen -->
+  <div id="end-screen" class="end-screen hidden">
+    <h2>You've Completed the Quiz!</h2>
+    <p>Your Final Score: <span id="final-score"></span>/10<br> Great Effort!</p>
+    <button onclick="restartQuiz()">Retry</button>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+

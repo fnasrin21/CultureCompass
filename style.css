@@ -1,0 +1,281 @@
+.ribeye-regular {
+    font-family: "Ribeye", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+body {
+    font-family: 'Ribeye', serif;
+    margin: 0;
+    padding: 0;
+    background: url('quizbacker.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    color: #1B262C;
+  }
+  
+  h1 {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #0F4C75;
+  }
+  
+  h3 {
+    font-size: 24px;
+    color: #f4fcd6;
+  }
+
+  button {
+    background-color: #3282B8;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Ribeye', serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #0F4C75;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #BBE1FA;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  li:hover {
+    background: #f7e9f0;
+    transform: scale(1.02);
+    color: rgb(214, 180, 200);
+  }
+  
+  /*Hide Display for Title Screen*/
+  .hidden {
+    display: none;
+  }
+  
+  /*Title Screen Styling*/
+  .title-box {
+    background: rgba(50, 130, 184, 0.9);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .welcome-box {
+    background: rgba(255, 211, 105, 0.9);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    color: #333;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .difficulty-box {
+    background: rgba(38, 70, 83, 0.9);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    color: white;
+  }
+  
+  .difficulty-box button {
+    display: block;
+    margin: 10px auto;
+    width: 150px;
+    font-weight: bold;
+  }
+  
+  /* Quiz Container Styling */
+  .quiz-container {
+    display: none; /* Hidden here*/
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .quiz-container.active {
+    display: flex; /* Display when title screen passes */
+  }
+  
+  .timer-box,
+  .score-box {
+    background: rgba(255, 211, 105, 0.9);
+    color: #1B262C;
+    padding: 20px;
+    width: 150px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    margin: 0 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /*End Screen*/
+  .timeout-screen,
+  .end-screen {
+    background: rgb(236, 214, 236);
+    color: white;
+    padding: 100px;
+    margin: 100px auto;
+    font-size: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid #0F4C75;
+  }
+  
+  .timeout-screen button,
+  .end-screen button {
+    background: #3282B8;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .timeout-screen button:hover,
+  .end-screen button:hover {
+    background-color: #0F4C75;
+  }
+  
+  /*Fade-In Animation*/
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  /*Fade-Out Animation*/
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+  
+  .fade-out {
+    animation: fadeOut 0.5s ease-in forwards;
+    pointer-events: none;
+  }
+  
+  /*Responsive Design*/
+  @media screen and (max-width: 768px) {
+    .quiz-container {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .timer-box,
+    .score-box {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  
+    .question-box {
+      margin: 10px 0;
+    }
+  
+    .difficulty-box button {
+      width: 100%;
+    }
+  }
+
+
+/*Progress Bar*/
+progress {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f7fac7;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  progress::-webkit-progress-bar {
+    background-color: #f7fac7;
+    border-radius: 5px;
+  }
+  
+  progress::-webkit-progress-value {
+    background-color: #d2f5bf;
+    border-radius: 5px;
+  }
+  
+  progress::-moz-progress-bar {
+    background-color: #d2f5bf;
+    border-radius: 5px;
+  }
+
+#progress-label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+    
+  
+  
+  
+  
+  
